@@ -13,31 +13,34 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0x18160ddd"
+      "type": "function"
     },
     {
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "_total",
+          "type": "uint256"
+        }
+      ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "constructor",
-      "signature": "constructor"
+      "type": "constructor"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b50620f4240600081905550609e806100296000396000f3fe608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806318160ddd146044575b600080fd5b348015604f57600080fd5b506056606c565b6040518082815260200191505060405180910390f35b6000548156fea165627a7a7230582084f4d25e36628099af604cfbb816d5446913e3549d24cd307caed4d55d9a96130029",
-  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806318160ddd146044575b600080fd5b348015604f57600080fd5b506056606c565b6040518082815260200191505060405180910390f35b6000548156fea165627a7a7230582084f4d25e36628099af604cfbb816d5446913e3549d24cd307caed4d55d9a96130029",
-  "sourceMap": "29:125:0:-;;;93:58;8:9:-1;5:2;;;30:1;27;20:12;5:2;93:58:0;136:7;124:11;:19;;;;29:125;;;;;;",
-  "deployedSourceMap": "29:125:0:-;;;;;;;;;;;;;;;;;;;;;;;;60:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;60:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity >=0.4.20;\r\n\r\ncontract MagellanicToken{\r\n    uint256 public totalSupply;\r\n    constructor() public{\r\n        totalSupply=1000000;\r\n    }\r\n}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516020806100f58339810180604052602081101561003057600080fd5b81019080805190602001909291905050508060008190555050609e806100576000396000f3fe608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806318160ddd146044575b600080fd5b348015604f57600080fd5b506056606c565b6040518082815260200191505060405180910390f35b6000548156fea165627a7a7230582042c0dea6d5ec1168afac8d5dd15e7e5b72949708cd53216eb2e242bf5db33d3f0029",
+  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806318160ddd146044575b600080fd5b348015604f57600080fd5b506056606c565b6040518082815260200191505060405180910390f35b6000548156fea165627a7a7230582042c0dea6d5ec1168afac8d5dd15e7e5b72949708cd53216eb2e242bf5db33d3f0029",
+  "sourceMap": "29:138:0:-;;;93:71;8:9:-1;5:2;;;30:1;27;20:12;5:2;93:71:0;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;93:71:0;;;;;;;;;;;;;;;;150:6;138:11;:18;;;;93:71;29:138;;;;;;",
+  "deployedSourceMap": "29:138:0:-;;;;;;;;;;;;;;;;;;;;;;;;60:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;60:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.4.20;\r\n\r\ncontract MagellanicToken{\r\n    uint256 public totalSupply;\r\n    constructor(uint256 _total) public{\r\n        totalSupply=_total;\r\n    }\r\n}",
   "sourcePath": "D:/ethereuem and solidity/Magellanic coin/contracts/MagellanicToken.sol",
   "ast": {
     "absolutePath": "/D/ethereuem and solidity/Magellanic coin/contracts/MagellanicToken.sol",
     "exportedSymbols": {
       "MagellanicToken": [
-        12
+        14
       ]
     },
-    "id": 13,
+    "id": 15,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -57,9 +60,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 12,
+        "id": 14,
         "linearizedBaseContracts": [
-          12
+          14
         ],
         "name": "MagellanicToken",
         "nodeType": "ContractDefinition",
@@ -69,7 +72,7 @@
             "id": 3,
             "name": "totalSupply",
             "nodeType": "VariableDeclaration",
-            "scope": 12,
+            "scope": 14,
             "src": "60:26:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -92,26 +95,26 @@
           },
           {
             "body": {
-              "id": 10,
+              "id": 12,
               "nodeType": "Block",
-              "src": "113:38:0",
+              "src": "127:37:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 8,
+                    "id": 10,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6,
+                      "id": 8,
                       "name": "totalSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 3,
-                      "src": "124:11:0",
+                      "src": "138:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -121,74 +124,96 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "31303030303030",
-                      "id": 7,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
-                      "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "136:7:0",
-                      "subdenomination": null,
+                      "id": 9,
+                      "name": "_total",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5,
+                      "src": "150:6:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_1000000_by_1",
-                        "typeString": "int_const 1000000"
-                      },
-                      "value": "1000000"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "src": "124:19:0",
+                    "src": "138:18:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 9,
+                  "id": 11,
                   "nodeType": "ExpressionStatement",
-                  "src": "124:19:0"
+                  "src": "138:18:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 11,
+            "id": 13,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4,
+              "id": 6,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "104:2:0"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5,
+                  "name": "_total",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13,
+                  "src": "105:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "105:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "104:16:0"
             },
             "returnParameters": {
-              "id": 5,
+              "id": 7,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "113:0:0"
+              "src": "127:0:0"
             },
-            "scope": 12,
-            "src": "93:58:0",
+            "scope": 14,
+            "src": "93:71:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 13,
-        "src": "29:125:0"
+        "scope": 15,
+        "src": "29:138:0"
       }
     ],
-    "src": "0:154:0"
+    "src": "0:167:0"
   },
   "legacyAST": {
     "absolutePath": "/D/ethereuem and solidity/Magellanic coin/contracts/MagellanicToken.sol",
     "exportedSymbols": {
       "MagellanicToken": [
-        12
+        14
       ]
     },
-    "id": 13,
+    "id": 15,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -208,9 +233,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 12,
+        "id": 14,
         "linearizedBaseContracts": [
-          12
+          14
         ],
         "name": "MagellanicToken",
         "nodeType": "ContractDefinition",
@@ -220,7 +245,7 @@
             "id": 3,
             "name": "totalSupply",
             "nodeType": "VariableDeclaration",
-            "scope": 12,
+            "scope": 14,
             "src": "60:26:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -243,26 +268,26 @@
           },
           {
             "body": {
-              "id": 10,
+              "id": 12,
               "nodeType": "Block",
-              "src": "113:38:0",
+              "src": "127:37:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 8,
+                    "id": 10,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6,
+                      "id": 8,
                       "name": "totalSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 3,
-                      "src": "124:11:0",
+                      "src": "138:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -272,65 +297,87 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "31303030303030",
-                      "id": 7,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
-                      "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "136:7:0",
-                      "subdenomination": null,
+                      "id": 9,
+                      "name": "_total",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5,
+                      "src": "150:6:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_1000000_by_1",
-                        "typeString": "int_const 1000000"
-                      },
-                      "value": "1000000"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "src": "124:19:0",
+                    "src": "138:18:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 9,
+                  "id": 11,
                   "nodeType": "ExpressionStatement",
-                  "src": "124:19:0"
+                  "src": "138:18:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 11,
+            "id": 13,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4,
+              "id": 6,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "104:2:0"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5,
+                  "name": "_total",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13,
+                  "src": "105:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "105:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "104:16:0"
             },
             "returnParameters": {
-              "id": 5,
+              "id": 7,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "113:0:0"
+              "src": "127:0:0"
             },
-            "scope": 12,
-            "src": "93:58:0",
+            "scope": 14,
+            "src": "93:71:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 13,
-        "src": "29:125:0"
+        "scope": 15,
+        "src": "29:138:0"
       }
     ],
-    "src": "0:154:0"
+    "src": "0:167:0"
   },
   "compiler": {
     "name": "solc",
@@ -345,7 +392,7 @@
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2021-12-07T11:29:36.148Z",
+  "updatedAt": "2021-12-07T12:29:24.821Z",
   "devdoc": {
     "methods": {}
   },
