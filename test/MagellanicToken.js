@@ -1,6 +1,5 @@
 const MagellanicToken = artifacts.require("../contracts/MagellanicToken.sol");
 const assert = require("assert");
-const { errorMonitor } = require("events");
 
 contract("MagellanicToken", function (accounts) {
   it("sets totalSupply on deployment", async () => {
