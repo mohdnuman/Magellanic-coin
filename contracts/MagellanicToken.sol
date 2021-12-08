@@ -6,11 +6,18 @@ contract MagellanicToken{
     string public name="Magellanic";
     string public symbol="MGL";
     string public standard="Magellanic v1.0";    //is not included in erc20 standard
+    mapping(address=>mapping(address=>uint)) public allowance;
 
     event Transfer(
         address indexed _from,
         address indexed _to,
         uint256 _value
+    );
+
+    event Approval(
+        address indexed _owner,
+        address indexed _spender,
+        uint256 indexed _value
     );
 
     constructor(uint256 _total) public{
@@ -29,6 +36,33 @@ contract MagellanicToken{
 
         return true;
     }
+    
+
+    
+    //approve
+    function approve(address _spender,uint256 _value) public returns(bool success){
+        //allowance
+        allowance[msg.sender][_spender]=_value;
+        //approve event
+        emit Approval(msg.sender, _spender, _value);
+        return true;
+    }
+
+    //transferFrom
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success){
+        require(balanceOf[_from]>=_value);
+        require(allowance[_from][msg.sender]>=_value);
+
+        balanceOf[_from]-=_value;
+        balanceOf[_to]+=_value;
+
+        allowance[_from][msg.sender]-=_value;
+
+        emit Transfer(_from, _to, _value);
+
+        return true;
+    }
+
 
 
 }
