@@ -34,4 +34,16 @@ contract MagellanictokenSale{
 
         emit Sell(msg.sender,_numberOfTokens);      
     }
+
+    //End sale
+    function endSale() public {
+        require(msg.sender==admin);
+        require(tokenContract.transfer(admin,tokenContract.balanceOf(address(this))));
+
+        address payable wallet = address(uint160(admin));
+        selfdestruct(wallet);
+        //tranferring remaining tokens to admin
+        //destroy contract
+
+    }
 }
