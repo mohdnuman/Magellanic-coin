@@ -27,15 +27,11 @@ contract MagellanictokenSale{
     //buy tokens
     function buyTokens(uint256 _numberOfTokens) public payable{
         require(msg.value==multiply(_numberOfTokens,tokenPrice));
+        require(tokenContract.balanceOf(address(this))>=_numberOfTokens);
+        require(tokenContract.transfer(msg.sender, _numberOfTokens));
 
         tokenSold+=_numberOfTokens;
 
-        emit Sell(msg.sender,_numberOfTokens);
-        //require that value is equal to tokens
-        //require if contract has enough tokens
-        //require that a transfer is successful
-   
-        
-        
+        emit Sell(msg.sender,_numberOfTokens);      
     }
 }
